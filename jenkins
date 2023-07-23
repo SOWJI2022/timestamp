@@ -13,7 +13,7 @@ pipeline{
         stage('call shell script'){
             steps{
                 script{
-                        chmod +x /var/lib/jenkins/workspace/timestamp@tmp/durable-18eca55d/timestamp.sh
+                        chmod +x timestamp.sh
 
                                      sh "./timestamp.sh"
                 }

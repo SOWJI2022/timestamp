@@ -13,18 +13,17 @@ pipeline{
         stage('call shell script'){
             steps{
                 script{
-                {
-                     sh "./timestamp.sh"
+                                     sh "./timestamp.sh"
                 }
                     }
                 }
-        }
+        
         stage('append to a file'){
             steps{
-                script{
+                script
                 {
                     sh "cat /var/lib/jenkins/workspace/timestamp/file.txt"
-                }            }            }
+                }                }
         }
       }
 

@@ -1,0 +1,31 @@
+pipeline{
+    agent any
+    environment {
+                GIT_URL = 'https://github.com/SOWJI2022/sowji.git'
+             }
+
+      stages{
+        stage('git clone'){
+            steps{
+                git url: 'https://github.com/SOWJI2022/timestamp.git', branch: 'master'
+            }
+        }
+        stage('call shell script'){
+            steps{
+                script{
+                {
+                     sh "./timestamp.sh"
+                }
+                    }
+                }
+        }
+        stage('append to a file'){
+            steps{
+                script{
+                {
+                    sh "cat /var/lib/jenkins/workspace/timestamp/file.txt"
+                }            }            }
+        }
+      }
+
+}

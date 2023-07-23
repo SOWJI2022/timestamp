@@ -1,13 +1,13 @@
 pipeline{
     agent any
     environment {
-                GIT_URL = 'https://github.com/SOWJI2022/sowji.git'
+                GIT_URL = 'https://github.com/SOWJI2022/timestamp.git'
              }
 
       stages{
         stage('git clone'){
             steps{
-                git url: 'https://github.com/SOWJI2022/timestamp.git', branch: 'master'
+                git url: "${GIT_URL}", branch: 'master'
             }
         }
         stage('call shell script'){
